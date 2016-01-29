@@ -3,6 +3,7 @@ var prompt = require('prompt');
 var moment = require('moment');
 var clone = require('clone');
 var geolib = require('geolib');
+var fx = require("money");
 
 var DESTINATIONS = 'https://www.ryanair.com/en/api/2/forms/flight-booking-selector/';
 var FARES = 'https://api.ryanair.com/farefinder/3/oneWayFares?&departureAirportIataCode={from}&language=en&limit=100&offset=0&outboundDepartureDateFrom={date}&outboundDepartureDateTo={date}&priceValueTo=50';
@@ -14,6 +15,16 @@ var trips = [];
 var destinations;
 var properties;
 var airports;
+
+fx.base = "EUR";
+fx.rates = {
+	"GBP" : 0.763020,
+    "DKK" : 0.640030,
+    "SEK" : 9.336421,
+    "PLN" : 4.442195,
+    "EUR" : 1,
+	/* etc */
+}
 
 request(DESTINATIONS)
 .then(function (result) {
@@ -80,6 +91,11 @@ function findNext(trip) {
         getFlights(trip.lastAirport, trip.lastDate, function(flights) {
             for (var j in flights) {
                 var flight = flights[j].outbound
+                
+                if (flight.price.currencyCode != 'EUR') {
+                    flight.price.value = fx.convert(flight.price.value, {from: flight.price.currencyCode, to: "EUR"});
+                }
+                
                 if (trip.price + flight.price.value < properties.budget && trip.lastDate.isBefore(flight.departureDate)) {
                     var newTrip = {
                         lastAirport: flight.arrivalAirport.iataCode,
