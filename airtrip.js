@@ -2,6 +2,7 @@ var request = require('request-promise');
 var prompt = require('prompt');
 var moment = require('moment');
 var clone = require('clone');
+var geolib = require('geolib');
 
 var DESTINATIONS = 'https://www.ryanair.com/en/api/2/forms/flight-booking-selector/';
 var FARES = 'https://api.ryanair.com/farefinder/3/oneWayFares?&departureAirportIataCode={from}&language=en&limit=100&offset=0&outboundDepartureDateFrom={date}&outboundDepartureDateTo={date}&priceValueTo=50';
@@ -63,6 +64,7 @@ request(DESTINATIONS)
                 lastDate: moment(result.date),
                 startAirport: airports[i].trim().toUpperCase(),
                 price: 0,
+                distance: 0,
                 hops: []
             }
             findNext(trip);
@@ -83,34 +85,13 @@ function findNext(trip) {
                         lastAirport: flight.arrivalAirport.iataCode,
                         lastDate: moment(flight.arrivalDate),
                         price: trip.price + flight.price.value,
+                        distance: trip.distance + getDistance(flight),
                         hops: clone(trip.hops)
                     }
                     newTrip.hops.push(flight);
                     if (airports.indexOf(newTrip.lastAirport) > -1) {
                         console.log();
-                        console.log('--- € ' + newTrip.price);
-                        for (var k in newTrip.hops) {
-                            console.log(newTrip.hops[k].departureAirport.name + ' ' + moment(newTrip.hops[k].departureDate).format("HH:mm") + ' - ' + newTrip.hops[k].arrivalAirport.name  + ' ' + moment(newTrip.hops[k].arrivalDate).format("HH:mm"));
-                        }
-                    }
-                    findNext(newTrip);
-                }
-            }
-        })
-        getFlights(trip.lastAirport, trip.lastDate, function(flights) {
-            for (var j in flights) {
-                var flight = flights[j].outbound
-                if (trip.price + flight.price.value < properties.budget && trip.lastDate.isBefore(flight.arrivalDate)) {
-                    var newTrip = {
-                        lastAirport: flight.arrivalAirport.iataCode,
-                        lastDate: moment(flight.arrivalDate),
-                        price: trip.price + flight.price.value,
-                        hops: clone(trip.hops)
-                    }
-                    newTrip.hops.push(flight);
-                    if (airports.indexOf(newTrip.lastAirport) > -1) {
-                        console.log();
-                        console.log('--- € ' + newTrip.price);
+                        console.log('--- € ' + newTrip.price + ', ' + newTrip.distance/1000 + ' km');
                         for (var k in newTrip.hops) {
                             console.log(newTrip.hops[k].departureAirport.name + ' ' + moment(newTrip.hops[k].departureDate).format("HH:mm") + ' - ' + newTrip.hops[k].arrivalAirport.name  + ' ' + moment(newTrip.hops[k].arrivalDate).format("HH:mm"));
                         }
@@ -120,6 +101,20 @@ function findNext(trip) {
             }
         })
     
+}
+
+function getDistance(flight) {
+    var departureIata = flight.departureAirport.iataCode;
+    var arrivalIata = flight.arrivalAirport.iataCode;
+    for (var i in destinations.airports) {
+        if (destinations.airports[i].iataCode == departureIata) {
+            var departureAirport = destinations.airports[i];
+        }
+        if (destinations.airports[i].iataCode == arrivalIata) {
+            var arrivalAirport = destinations.airports[i];
+        }
+    }
+    return geolib.getDistance(departureAirport, arrivalAirport);
 }
 
 function getFlights(from, date, cb) {
