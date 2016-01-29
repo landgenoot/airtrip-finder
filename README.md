@@ -6,139 +6,100 @@ Travelling across multiple cities in Europe at minimal costs
 ```
 $ node airtrip.js 
 Lets find an airtrip!
-prompt: Target departure date (DD-MM-YYYY):  (2016-02-01) 2016-03-03
+prompt: Target departure date (DD-MM-YYYY):  (2016-02-01) 2016-03-15
 prompt: Budget in EUR:  (50) 150
 prompt: Departure/arrival airports (e.g. EIN, AMS, MST):  (EIN) EIN, AMS, MST
 
---- € 25.73, 1429.982 km
+--- € 38.98, 1429.982 km, EUR/KM 0.027259084380083103
 Eindhoven 18:55 - Turin 20:25
 Turin 20:50 - Eindhoven 22:20
 
---- € 44.98, 1635.268 km
-Eindhoven 14:55 - Venice (TSF) 16:30
-Venice (TSF) 16:55 - Eindhoven 18:30
+--- € 59.980000000000004, 1573.493 km, EUR/KM 0.03811901292220557
+Amsterdam 11:00 - Dublin 11:40
+Dublin 12:45 - Eindhoven 15:25
 
---- € 57.980000000000004, 2797.58 km
-Eindhoven 16:35 - Madrid 19:00
-Madrid 19:35 - Eindhoven 21:55
+--- € 33.65, 1635.268 km, EUR/KM 0.020577666780001808
+Eindhoven 17:25 - Venice (TSF) 19:00
+Venice (TSF) 20:15 - Eindhoven 21:50
 
---- € 46.59, 3080.172 km
-Eindhoven 16:40 - Brindisi 19:10
-Brindisi 19:35 - Eindhoven 22:15
-
---- € 33.98, 717.562 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 12:40 - Eindhoven 14:50
-
---- € 97.98, 3611.654 km
+--- € 81.98, 3611.654 km, EUR/KM 0.022698741352300083
 Eindhoven 09:25 - Lisbon 11:15
 Lisbon 11:40 - Eindhoven 15:30
 
---- € 46.98, 1641.402 km
+--- € 46.98, 1641.402 km, EUR/KM 0.0286218732522563
 Eindhoven 11:30 - Dublin 12:20
 Dublin 12:45 - Eindhoven 15:25
 
---- € 59.07, 3082.819 km
-Eindhoven 14:55 - Venice (TSF) 16:30
-Venice (TSF) 17:35 - Brindisi 19:05
-Brindisi 19:35 - Eindhoven 22:15
-
---- € 64.97, 2293.824 km
+--- € 39.25678199785064, 717.562 km, EUR/KM 0.05470855758505974
 Eindhoven 08:00 - London (STN) 08:15
-London (STN) 13:10 - Venice (TSF) 16:10
-Venice (TSF) 16:55 - Eindhoven 18:30
+London (STN) 12:40 - Eindhoven 14:50
 
---- € 74.97, 3056.876 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 08:35 - Madrid 12:05
-Madrid 19:35 - Eindhoven 21:55
-
---- € 70.71, 3065.25 km
-Eindhoven 14:55 - Venice (TSF) 16:30
-Venice (TSF) 16:55 - Eindhoven 18:30
+--- € 98.96, 3003.475 km, EUR/KM 0.032948501319305136
+Amsterdam 11:00 - Dublin 11:40
+Dublin 12:45 - Eindhoven 15:25
 Eindhoven 18:55 - Turin 20:25
 Turin 20:50 - Eindhoven 22:20
 
---- € 59.71, 2147.544 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 12:40 - Eindhoven 14:50
-Eindhoven 18:55 - Turin 20:25
-Turin 20:50 - Eindhoven 22:20
+--- € 93.63, 3208.761 km, EUR/KM 0.02917948703565021
+Amsterdam 11:00 - Dublin 11:40
+Dublin 12:45 - Eindhoven 15:25
+Eindhoven 17:25 - Venice (TSF) 19:00
+Venice (TSF) 20:15 - Eindhoven 21:50
 
---- € 80.57, 3797.734 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 12:40 - Eindhoven 14:50
-Eindhoven 16:40 - Brindisi 19:10
-Brindisi 19:35 - Eindhoven 22:15
+--- € 90.19999999999999, 3023.126 km, EUR/KM 0.029836665755909604
+Eindhoven 10:25 - Barcelona (GRO) 12:25
+Barcelona (GRO) 13:20 - Alghero 14:35
+Alghero 16:00 - Venice (TSF) 17:20
+Venice (TSF) 20:15 - Eindhoven 21:50
 
---- € 91.96000000000001, 3515.142 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 12:40 - Eindhoven 14:50
-Eindhoven 16:35 - Madrid 19:00
-Madrid 19:35 - Eindhoven 21:55
-
---- € 78.96, 2352.83 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 12:40 - Eindhoven 14:50
-Eindhoven 14:55 - Venice (TSF) 16:30
-Venice (TSF) 16:55 - Eindhoven 18:30
-
---- € 79.06, 3741.375 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 13:10 - Venice (TSF) 16:10
-Venice (TSF) 17:35 - Brindisi 19:05
-Brindisi 19:35 - Eindhoven 22:15
-
---- € 123.71, 5041.636 km
+--- € 120.96, 5041.636 km, EUR/KM 0.023992212051802228
 Eindhoven 09:25 - Lisbon 11:15
 Lisbon 11:40 - Eindhoven 15:30
 Eindhoven 18:55 - Turin 20:25
 Turin 20:50 - Eindhoven 22:20
 
---- € 144.57, 6691.826 km
+--- € 115.63, 5246.922 km, EUR/KM 0.022037682283060432
 Eindhoven 09:25 - Lisbon 11:15
 Lisbon 11:40 - Eindhoven 15:30
-Eindhoven 16:40 - Brindisi 19:10
-Brindisi 19:35 - Eindhoven 22:15
+Eindhoven 17:25 - Venice (TSF) 19:00
+Venice (TSF) 20:15 - Eindhoven 21:50
 
---- € 72.71, 3071.384 km
+--- € 80.63, 3276.67 km, EUR/KM 0.02460729948392728
+Eindhoven 11:30 - Dublin 12:20
+Dublin 12:45 - Eindhoven 15:25
+Eindhoven 17:25 - Venice (TSF) 19:00
+Venice (TSF) 20:15 - Eindhoven 21:50
+
+--- € 85.96, 3071.384 km, EUR/KM 0.027987382886672584
 Eindhoven 11:30 - Dublin 12:20
 Dublin 12:45 - Eindhoven 15:25
 Eindhoven 18:55 - Turin 20:25
 Turin 20:50 - Eindhoven 22:20
 
---- € 93.57, 4721.574 km
-Eindhoven 11:30 - Dublin 12:20
-Dublin 12:45 - Eindhoven 15:25
-Eindhoven 16:40 - Brindisi 19:10
-Brindisi 19:35 - Eindhoven 22:15
+--- € 75.90678199785063, 2841.518 km, EUR/KM 0.02671346160673648
+Eindhoven 08:00 - London (STN) 08:15
+London (STN) 10:35 - Berlin (SXF) 13:25
+Berlin (SXF) 14:45 - Venice (TSF) 16:20
+Venice (TSF) 20:15 - Eindhoven 21:50
 
---- € 104.96000000000001, 4438.982 km
-Eindhoven 11:30 - Dublin 12:20
-Dublin 12:45 - Eindhoven 15:25
-Eindhoven 16:35 - Madrid 19:00
-Madrid 19:35 - Eindhoven 21:55
-
---- € 93.05000000000001, 3800.381 km
+--- € 78.23678199785064, 2147.544 km, EUR/KM 0.03643081678319543
 Eindhoven 08:00 - London (STN) 08:15
 London (STN) 12:40 - Eindhoven 14:50
-Eindhoven 14:55 - Venice (TSF) 16:30
-Venice (TSF) 17:35 - Brindisi 19:05
-Brindisi 19:35 - Eindhoven 22:15
-
---- € 90.69999999999999, 3723.806 km
-Eindhoven 08:00 - London (STN) 08:15
-London (STN) 13:10 - Venice (TSF) 16:10
-Venice (TSF) 16:55 - Eindhoven 18:30
 Eindhoven 18:55 - Turin 20:25
 Turin 20:50 - Eindhoven 22:20
 
---- € 104.68999999999998, 3782.812 km
+--- € 72.90678199785063, 2352.83 km, EUR/KM 0.030986846477582583
 Eindhoven 08:00 - London (STN) 08:15
 London (STN) 12:40 - Eindhoven 14:50
-Eindhoven 14:55 - Venice (TSF) 16:30
-Venice (TSF) 16:55 - Eindhoven 18:30
-Eindhoven 18:55 - Turin 20:25
-Turin 20:50 - Eindhoven 22:20
+Eindhoven 17:25 - Venice (TSF) 19:00
+Venice (TSF) 20:15 - Eindhoven 21:50
+
+--- € 87.53910975998784, 4778.484 km, EUR/KM 0.01831943138451187
+Eindhoven 08:00 - London (STN) 08:15
+London (STN) 08:55 - Warsaw (WMI) 12:10
+Warsaw (WMI) 13:00 - Paris (BVA) 15:30
+Paris (BVA) 16:50 - Venice (TSF) 18:25
+Venice (TSF) 20:15 - Eindhoven 21:50
+
 
 ```
