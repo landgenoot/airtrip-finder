@@ -80,7 +80,7 @@ function findNext(trip) {
         getFlights(trip.lastAirport, trip.lastDate, function(flights) {
             for (var j in flights) {
                 var flight = flights[j].outbound
-                if (trip.price + flight.price.value < properties.budget && trip.lastDate.isBefore(flight.arrivalDate)) {
+                if (trip.price + flight.price.value < properties.budget && trip.lastDate.isBefore(flight.departureDate)) {
                     var newTrip = {
                         lastAirport: flight.arrivalAirport.iataCode,
                         lastDate: moment(flight.arrivalDate),
@@ -91,7 +91,7 @@ function findNext(trip) {
                     newTrip.hops.push(flight);
                     if (airports.indexOf(newTrip.lastAirport) > -1) {
                         console.log();
-                        console.log('--- € ' + newTrip.price + ', ' + newTrip.distance/1000 + ' km');
+                        console.log('--- € ' + newTrip.price + ', ' + newTrip.distance/1000 + ' km, EUR/KM ' + newTrip.price/(newTrip.distance/1000));
                         for (var k in newTrip.hops) {
                             console.log(newTrip.hops[k].departureAirport.name + ' ' + moment(newTrip.hops[k].departureDate).format("HH:mm") + ' - ' + newTrip.hops[k].arrivalAirport.name  + ' ' + moment(newTrip.hops[k].arrivalDate).format("HH:mm"));
                         }
