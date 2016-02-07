@@ -1,5 +1,6 @@
 # Ryanair airtrip finder
-Travelling across multiple cities in Europe at minimal costs
+Travelling across multiple cities in Europe at minimal costs.
+Note: Needs some further parameters to become usable. E.g. multi-day support, maximum flights per day, and minimum transit time.
 
 
 ## Example usage
