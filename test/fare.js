@@ -1,5 +1,5 @@
 import test from 'ava'
-import { toBase } from '../lib/fare.js'
+import * as fare from '../lib/fare.js'
 
 test('Convert fare object to EUR', async t => {
   let originalFare = {
@@ -22,7 +22,7 @@ test('Convert fare object to EUR', async t => {
       }
     }
   }
-  t.deepEqual(toBase(originalFare, 'EUR'), expectedFare)
+  t.deepEqual(fare.toBase(originalFare, 'EUR'), expectedFare)
 })
 
 test('Convert unknow currency object to EUR', async t => {
@@ -37,7 +37,7 @@ test('Convert unknow currency object to EUR', async t => {
     }
   }
   const error = t.throws(() => {
-    toBase(originalFare, 'EUR')
+    fare.toBase(originalFare, 'EUR')
   })
   t.is(error, 'fx error')
 })
